@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 from django.contrib.auth.models import User
 from django.db import models
@@ -18,7 +16,8 @@ class Category(models.Model):
     is_nav = models.BooleanField(default=False, verbose_name='是否为导航')
     owner = models.ForeignKey(User, verbose_name='作者')
     created_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-
+    def __str__(self):
+        return self.name
     class Meta:
         verbose_name = verbose_name_plural = '分类'
 
@@ -35,7 +34,8 @@ class Tag(models.Model):
     )
     owner = models.ForeignKey(User, verbose_name='作者')
     created_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-
+    def __str__(self):
+        return self.name
     class Meta:
         verbose_name = verbose_name_plural = '标签'
 
