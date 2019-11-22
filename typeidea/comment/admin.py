@@ -9,3 +9,4 @@ class CommontAdmin(admin.ModelAdmin):
     list_display = (
         'target','nickname','content','website','created_time'
     )
+    fields = ('nickname',)
