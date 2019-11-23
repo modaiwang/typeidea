@@ -107,3 +107,5 @@ class Post(models.Model):
     def hot_posts(cls):
         return cls.objects.filter(status = cls.STATUS_NORMAL).order_by('-pv')
 
+    def __str__(self):
+        return self.title+':'+self.desc

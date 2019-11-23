@@ -7,7 +7,8 @@
 <body>
 <div>顶部分类：
     {% for cate in navs %}
-    <a href="/category/{{ cate.id }}/">{{ cate.name }}</a>
+{#    <a href="/category/{{ cate.id }}/">{{ cate.name }}</a>#}
+        <a href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>
     {% endfor %}
 </div>
 <hr/>
@@ -18,13 +19,14 @@
 <div>
     底部分类：
     {% for cate in categories %}
-    <a href="/category/{{ cate.id }}/">{{ cate.name }}</a>
+{#    <a href="/category/{{ cate.id }}/">{{ cate.name }}</a>#}
+        <a href="{% url 'category-list' cate.id %}">{{ cate.name }}</a>
     {% endfor %}
 </div>
 <hr/>
 <div>
     侧边栏展示：
-    {% for sidebar in sidebars %}
+    {% for sidebar in sidebars  %}
     <h4>{{ sidebar.title }}</h4>
     {{ sidebar.content_html }}
     {% endfor %}

@@ -9,4 +9,22 @@ class CommontAdmin(admin.ModelAdmin):
     list_display = (
         'target','nickname','content','website','created_time'
     )
-    fields = ('nickname',)
+    fieldsets = (
+        ('个人信息',{
+            'description':'个人信息描述',
+            'fields':(
+                'nickname','email','website'
+            )
+        }),
+        ('评论帖子',{
+            'fields':(
+                'target',
+            )
+        }),
+        ('评论详情',{
+            'fields':(
+                'content',
+            )
+        }),
+
+    )
