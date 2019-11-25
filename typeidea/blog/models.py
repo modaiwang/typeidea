@@ -31,6 +31,7 @@ class Category(models.Model):
         for cate in categories:
             if cate.is_nav:
                 nav_categories.append(cate)
+                # normal_categories.append(cate)
             else:
                 normal_categories.append(cate)
 
